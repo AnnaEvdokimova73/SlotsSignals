@@ -10,7 +10,7 @@ void StopWatch::start()
     time = QTime(0, 0, 0);
     timeStart = time;
     timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(updateTime()));
+    connect(timer, &QTimer::timeout, this, &StopWatch::updateTime);
     timer->start(100);
 }
 
